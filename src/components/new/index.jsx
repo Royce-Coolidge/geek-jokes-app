@@ -17,7 +17,7 @@ export default function New() {
   };
 
   return (
-    <div className="container">
+    <div className="bg-blue-500">
       <div className="content">
         <p>Add your own hilarious joke...</p>
         <form>

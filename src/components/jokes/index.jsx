@@ -15,40 +15,39 @@ export default function Jokes() {
   }, [data]);
 
   return (
-    <div className="jokes-layout">
-      <header className="jokes-header">
-        <div className="container">
-          <h1 className="home-link">
-            <Link to="/" title="Remix Jokes" aria-label="Remix Jokes">
+    <div >
+      <header>
+        <div>
+          <h1>
+            <Link to="/" title="Geek Jokes" aria-label="Remix Jokes">
               <span className="logo">🤪</span>
               <span className="logo-medium">J🤪KES</span>
             </Link>
           </h1>
         </div>
       </header>
-      <main className="container">
+      <main>
         <div>
           <p>{data.joke}</p>
           <button className="button" onClick={refetch}>
             Get Random Joke
           </button>
-          <Link to="new" className="button">
+          <Link to="new">
             Add Your Own Hilarious Joke!
           </Link>
         </div>
         {myJokes.length > 0 && (
-          <main className="jokes-main">
-            <div className="container">
+          
+            <div>
               <h1>Your Awesome Jokes</h1>
               <div className="jokes-list">
                 <ul>
                   {myJokes.map((joke, i) => (
                     <li key={joke.id}>{joke.content}</li>
                   ))}
-                </ul>
+                </ul>i 
               </div>
             </div>
-          </main>
         )}
       </main>
     </div>
