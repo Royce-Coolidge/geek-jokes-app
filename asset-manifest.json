@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/space-x-app/static/css/main.e63498fa.css",
-    "main.js": "/space-x-app/static/js/main.a0c9b1f8.js",
-    "static/js/399.832d240d.chunk.js": "/space-x-app/static/js/399.832d240d.chunk.js",
-    "static/js/787.b724391b.chunk.js": "/space-x-app/static/js/787.b724391b.chunk.js",
-    "static/js/586.75bfbd06.chunk.js": "/space-x-app/static/js/586.75bfbd06.chunk.js",
-    "index.html": "/space-x-app/index.html",
-    "main.e63498fa.css.map": "/space-x-app/static/css/main.e63498fa.css.map",
-    "main.a0c9b1f8.js.map": "/space-x-app/static/js/main.a0c9b1f8.js.map",
-    "399.832d240d.chunk.js.map": "/space-x-app/static/js/399.832d240d.chunk.js.map",
-    "787.b724391b.chunk.js.map": "/space-x-app/static/js/787.b724391b.chunk.js.map",
-    "586.75bfbd06.chunk.js.map": "/space-x-app/static/js/586.75bfbd06.chunk.js.map"
+    "main.css": "/geek-jokes-app/static/css/main.e63498fa.css",
+    "main.js": "/geek-jokes-app/static/js/main.9c9b01cb.js",
+    "static/js/399.832d240d.chunk.js": "/geek-jokes-app/static/js/399.832d240d.chunk.js",
+    "static/js/787.b724391b.chunk.js": "/geek-jokes-app/static/js/787.b724391b.chunk.js",
+    "static/js/586.75bfbd06.chunk.js": "/geek-jokes-app/static/js/586.75bfbd06.chunk.js",
+    "index.html": "/geek-jokes-app/index.html",
+    "main.e63498fa.css.map": "/geek-jokes-app/static/css/main.e63498fa.css.map",
+    "main.9c9b01cb.js.map": "/geek-jokes-app/static/js/main.9c9b01cb.js.map",
+    "399.832d240d.chunk.js.map": "/geek-jokes-app/static/js/399.832d240d.chunk.js.map",
+    "787.b724391b.chunk.js.map": "/geek-jokes-app/static/js/787.b724391b.chunk.js.map",
+    "586.75bfbd06.chunk.js.map": "/geek-jokes-app/static/js/586.75bfbd06.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e63498fa.css",
-    "static/js/main.a0c9b1f8.js"
+    "static/js/main.9c9b01cb.js"
   ]
 }
