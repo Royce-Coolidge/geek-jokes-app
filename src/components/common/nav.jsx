@@ -2,12 +2,9 @@ import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-
 export default function NavigationBar() {
-
-  
   return (
-    <Disclosure as="nav" className="bg-white shadow mt-5 rounded sm:mx-10">
+    <Disclosure as="nav" className="bg-white shadow mt-5  rounded bg-white-400">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -23,7 +20,7 @@ export default function NavigationBar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-center z-20 sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <svg
                     className="w-20"
@@ -44,19 +41,19 @@ export default function NavigationBar() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="/"
-                    className="inline-flex uppercase items-center  text-gray-500  border-b-2 active:border-indigo-500 px-1 pt-1 text-sm font-medium active:text-gray-900"
+                    className="active:border-indigo-500 active:text-indigo-600 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     Launches
                   </a>
                   <a
                     href="/history"
-                    className="inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="active:border-indigo-500 active:text-indigo-600 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     History
                   </a>
                   <a
                     href="/about"
-                    className="inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="active:border-indigo-500 active:text-indigo-600 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     About
                   </a>
@@ -70,21 +67,21 @@ export default function NavigationBar() {
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/launches"
                 className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
               >
                 Launches
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/history"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
                 History
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="/about"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
                 About

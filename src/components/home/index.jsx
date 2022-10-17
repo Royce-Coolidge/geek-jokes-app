@@ -1,29 +1,24 @@
 import { DateTime } from "luxon";
-import { Container } from "../common/container";
 import { Tabs } from "../common/tabs";
 import LaunchesPage from "../launches";
 import { useLatestLaunchData } from "./use-latest-launch-data";
 
 export default function Home() {
-
-  const { data } = useLatestLaunchData()
+  const { data } = useLatestLaunchData();
 
   if (!data) {
-    return null
+    return null;
   }
 
-  data.sort((a, b) => 
-    b.date_local.localeCompare(a.date_local));
-  const today = DateTime.utc().startOf("second")
-  const upcoming = data.filter(launch => DateTime.fromISO(launch.date_local) > today)
-  const successful = data.filter(
-    (launch) => launch.success === true
+  data.sort((a, b) => b.date_local.localeCompare(a.date_local));
+  const today = DateTime.utc().startOf("second");
+  const upcoming = data.filter(
+    (launch) => DateTime.fromISO(launch.date_local) > today
   );
+  const successful = data.filter((launch) => launch.success === true);
   const failed = data.filter((launch) => launch.success === false);
 
-  const next_launch = upcoming.pop()
-  console.log(next_launch)
-
+  const next_launch = upcoming.pop();
 
   let tabs = [
     {
@@ -44,14 +39,9 @@ export default function Home() {
     {
       id: 3,
       title: "Failed",
-      content: <LaunchesPage data={failed} />
+      content: <LaunchesPage data={failed} />,
     },
   ];
 
-  
-  return (
-    <Container>
-      <Tabs tabs={tabs} />
-    </Container>
-  );
+  return <Tabs tabs={tabs} />;
 }
