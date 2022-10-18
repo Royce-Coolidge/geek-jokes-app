@@ -31,7 +31,7 @@ export default function AboutPage() {
               </span>
             </div>
             <span>
-              <p className="text-xl font-semibold text-gray-900">{data.ceo}</p>
+              <p className="text-xl font-semibold dark:text-gray-300 text-gray-900">{data.ceo}</p>
             </span>
             <div className="mt-6 flex items-center justify-center">
               <div className="flex-shrink-0">
