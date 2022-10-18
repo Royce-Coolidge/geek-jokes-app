@@ -75,10 +75,11 @@ export default function NavigationBar() {
                   </a>
                 </div>
               </div>
-              <MoonIcon
+              <button><MoonIcon
                 onClick={handleTheme}
                 className="w-5 h-5 text-center my-auto text-slate-400 "
               />
+              </button>
             </div>
           </div>
 

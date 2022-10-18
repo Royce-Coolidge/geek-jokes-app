@@ -3,6 +3,14 @@ import clsx from "clsx";
 import { DateTime } from "luxon";
 
 export default function LaunchesPage({ data, next = null }) {
+  if (next) {
+    
+    console.log( 
+      DateTime.fromISO(next.date_local)
+        .setZone("Europe/London")
+        .toRelative({ unit: ["hours"] }).slice(3)
+    );
+  }
   return (
     <div>
       {next && (
@@ -22,6 +30,26 @@ export default function LaunchesPage({ data, next = null }) {
               </h3>
               <div className="mt-2 text-sm text-yellow-700">
                 <p>{next.details}</p>
+              </div>
+              <div className="flex text-sm gap-1 border py-2 px-4 border-yellow-800 rounded-lg font-medium text-yellow-800">
+                <h3 className="">
+                  {` ${DateTime.fromISO(next.date_local)
+                    .setZone("Europe/London")
+                    .toRelative({ unit: ["hours"] })}, `}
+                </h3>
+                <h3 className="">
+                  {` ${DateTime.fromISO(next.date_local)
+                    .setZone("Europe/London")
+                    .toRelative({ unit: ["minutes"] })
+                    .slice(3)} and `}
+                </h3>
+                <h3 className="">
+                  {DateTime.fromISO(next.date_local)
+                    .setZone("Europe/London")
+                    .toRelative({ unit: ["seconds"] })
+                    .slice(3)}
+                  
+                </h3>
               </div>
             </div>
           </div>
@@ -53,7 +81,9 @@ export default function LaunchesPage({ data, next = null }) {
                     )}
                   </div>
                   <div className="flex flex-col items-start min-w-0 flex-1 justify-center pt-1.5">
-                    <h1 className="font-mono text-lg dark:text-white">{event.name}</h1>
+                    <h1 className="font-mono text-lg dark:text-white">
+                      {event.name}
+                    </h1>
 
                     <div className="flex">
                       <span className="text-gray-500 font-mono">
