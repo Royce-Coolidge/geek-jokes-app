@@ -1,3 +1,9 @@
+# Space X App
+
+This project was made with React and Trailwind  CSS.
+
+SpaceX's launch timeline. See successful, failed and upcoming launches.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
