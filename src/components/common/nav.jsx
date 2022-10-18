@@ -1,10 +1,26 @@
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, MoonIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useTheme } from "../../context/theme-context";
 
 export default function NavigationBar() {
+
+
+  const { theme, setTheme } = useTheme()
+
+  function handleTheme() {
+    const html = document.querySelector("html");
+    theme === "light"
+      ? html.classList.add("dark")
+      : html.classList.remove("dark");
+    setTheme(theme === "light" ? "dark" : "light");
+  }
+
   return (
-    <Disclosure as="nav" className="bg-white shadow mt-5  rounded bg-white-400">
+    <Disclosure
+      as="nav"
+      className={`dark:bg-transparent dark:text-white bg-white shadow mt-5  rounded `}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -23,7 +39,7 @@ export default function NavigationBar() {
               <div className="flex flex-1 items-center justify-center z-20 sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <svg
-                    className="w-20"
+                    className="w-30"
                     viewBox="394.847 178.688 2478.014 2478.014"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -41,24 +57,28 @@ export default function NavigationBar() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="/"
-                    className="active:border-indigo-500 active:text-indigo-600 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     Launches
                   </a>
                   <a
                     href="/history"
-                    className="active:border-indigo-500 active:text-indigo-600 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     History
                   </a>
                   <a
                     href="/about"
-                    className="active:border-indigo-500 active:text-indigo-600 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className="active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
                     About
                   </a>
                 </div>
               </div>
+              <MoonIcon
+                onClick={handleTheme}
+                className="w-5 h-5 text-center my-auto text-slate-400 "
+              />
             </div>
           </div>
 

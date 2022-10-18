@@ -39,7 +39,7 @@ export default function LaunchesPage({ data, next = null }) {
                   />
                 ) : null}
                 <div className="relative flex space-x-3">
-                  <div className="flex items-center py-4 bg-white">
+                  <div className="flex items-center py-4 dark:bg-transparent bg-white">
                     {event.links.patch.small ? (
                       <img
                         className="rounded-full w-16 h-16 "
@@ -53,7 +53,7 @@ export default function LaunchesPage({ data, next = null }) {
                     )}
                   </div>
                   <div className="flex flex-col items-start min-w-0 flex-1 justify-center pt-1.5">
-                    <h1 className="font-mono text-lg ">{event.name}</h1>
+                    <h1 className="font-mono text-lg dark:text-white">{event.name}</h1>
 
                     <div className="flex">
                       <span className="text-gray-500 font-mono">

@@ -10,6 +10,7 @@ import { Container } from './components/common/container';
 import AboutPage from './components/about';
 const Home = lazy(() => import('./components/home'));
 
+
 function Layout() {
   return (
     <Container>
@@ -17,9 +18,9 @@ function Layout() {
       <NavigationBar />
       <div className="px-4 lg:px-8 xl:px-16">
 
-      <Outlet />
-  </div>
-    
+        <Outlet />
+      </div>
+
     </Container>
   );
 }

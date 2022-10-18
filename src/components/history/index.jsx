@@ -12,7 +12,7 @@ export default function HistoryPage() {
       <ol className="relative border-l mt-20 border-gray-200 dark:border-gray-700">
         {data.map((milestone, milestoneIdx) => {
           return (
-            <li className="mb-10 ml-4 text-left">
+            <li className="mb-10 ml-4 text-left bg-gray-50 dark:bg-transparent border p-5 opacity-75 rounded-lg ">
               {milestoneIdx !== data.length - 1 && (
                 <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
               )}

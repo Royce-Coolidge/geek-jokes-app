@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { JokeProvider } from './context/jokes-context';
+import { ThemeProvider } from './context/theme-context';
 
 const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +13,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <QueryClientProvider client={queryClient}>
-        <JokeProvider>
+        <ThemeProvider>
         <App />
-        </JokeProvider>
+        </ThemeProvider>
       </QueryClientProvider>
     </Router>
   </React.StrictMode>
