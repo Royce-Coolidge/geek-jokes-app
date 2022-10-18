@@ -39,7 +39,7 @@ export default function NavigationBar() {
               <div className="flex flex-1 items-center justify-center z-20 sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <svg
-                    className="w-30"
+                    className="w-20"
                     viewBox="394.847 178.688 2478.014 2478.014"
                     xmlns="http://www.w3.org/2000/svg"
                   >
