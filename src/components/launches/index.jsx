@@ -3,14 +3,7 @@ import clsx from "clsx";
 import { DateTime } from "luxon";
 
 export default function LaunchesPage({ data, next = null }) {
-  if (next) {
-    
-    console.log( 
-      DateTime.fromISO(next.date_local)
-        .setZone("Europe/London")
-        .toRelative({ unit: ["hours"] }).slice(3)
-    );
-  }
+
   return (
     <div>
       {next && (
