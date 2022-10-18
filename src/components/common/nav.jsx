@@ -2,9 +2,12 @@ import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, MoonIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "../../context/theme-context";
+import { matchRoutes, useLocation } from "react-router-dom";
+
+
 
 export default function NavigationBar() {
-
+  const location = useLocation();
 
   const { theme, setTheme } = useTheme()
 
@@ -15,6 +18,9 @@ export default function NavigationBar() {
       : html.classList.remove("dark");
     setTheme(theme === "light" ? "dark" : "light");
   }
+
+  console.log(location.pathname);
+
 
   return (
     <Disclosure
@@ -57,28 +63,38 @@ export default function NavigationBar() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="/"
-                    className="active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className={`${
+                      location.pathname === "/" &&
+                      "border-indigo-500 text-indigo-600 border-b-2"
+                    } active:border-indigo-500 activEtext-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
                   >
                     Launches
                   </a>
                   <a
                     href="/history"
-                    className="active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className={`${
+                      location.pathname === "/history" &&
+                      "border-indigo-500 text-indigo-600"
+                    } "active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
                   >
                     History
                   </a>
                   <a
                     href="/about"
-                    className="active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    className={`${
+                      location.pathname === "/about" &&
+                      "border-indigo-500 text-indigo-600"
+                    } "active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
                   >
                     About
                   </a>
                 </div>
               </div>
-              <button><MoonIcon
-                onClick={handleTheme}
-                className="w-5 h-5 text-center my-auto text-slate-400 "
-              />
+              <button>
+                <MoonIcon
+                  onClick={handleTheme}
+                  className="w-5 h-5 text-center my-auto text-slate-400 "
+                />
               </button>
             </div>
           </div>
@@ -88,22 +104,31 @@ export default function NavigationBar() {
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
               <Disclosure.Button
                 as="a"
-                href="/launches"
-                className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
+                href="/"
+                className={` block border-l-4 ${
+                  location.pathname === "/" &&
+                  "border-indigo-500 bg-indigo-50 text-indigo-700"
+                } py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 `}
               >
                 Launches
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/history"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                className={` block border-l-4 ${
+                  location.pathname === "/history" &&
+                  "border-indigo-500 bg-indigo-50 text-indigo-700"
+                } py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 `}
               >
                 History
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/about"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                className={` block border-l-4 ${
+                  location.pathname === "/about" &&
+                  "border-indigo-500 bg-indigo-50 text-indigo-700"
+                } py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 `}
               >
                 About
               </Disclosure.Button>
