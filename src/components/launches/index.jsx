@@ -7,11 +7,11 @@ export default function LaunchesPage({ data, next = null }) {
   return (
     <div>
       {next && (
-        <div className="rounded-md my-3 bg-yellow-50 p-4 animate-pulse">
+        <div className="rounded-md my-3 dark:bg-transparent border bg-yellow-50 p-4 animate-pulse">
           <div className="flex">
             <div className="flex-shrink-0">
               <RocketLaunchIcon
-                className="h-5 w-5 text-yellow-400"
+                className="h-5 w-5 mt-1 text-yellow-400"
                 aria-hidden="true"
               />
             </div>
@@ -41,7 +41,6 @@ export default function LaunchesPage({ data, next = null }) {
                     .setZone("Europe/London")
                     .toRelative({ unit: ["seconds"] })
                     .slice(3)}
-                  
                 </h3>
               </div>
             </div>

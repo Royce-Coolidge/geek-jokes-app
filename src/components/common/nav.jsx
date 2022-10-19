@@ -1,15 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, MoonIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "../../context/theme-context";
 import { matchRoutes, useLocation } from "react-router-dom";
 
-
-
 export default function NavigationBar() {
   const location = useLocation();
 
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
   function handleTheme() {
     const html = document.querySelector("html");
@@ -19,8 +17,10 @@ export default function NavigationBar() {
     setTheme(theme === "light" ? "dark" : "light");
   }
 
-  console.log(location.pathname);
-
+  useEffect(() => {
+    const html = document.querySelector("html");
+  html.classList.add("dark");
+  }, [])
 
   return (
     <Disclosure
@@ -45,7 +45,7 @@ export default function NavigationBar() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <svg
-                    className="w-20"
+                    className="w-28"
                     viewBox="394.847 178.688 2478.014 2478.014"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -65,8 +65,8 @@ export default function NavigationBar() {
                     href="/"
                     className={`${
                       location.pathname === "/" &&
-                      "border-indigo-500 text-indigo-600 border-b-2"
-                    } active:border-indigo-500 activEtext-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
+                      "border-indigo-500 text-indigo-600 border-b-2 dark:text-indigo-400"
+                    } active:border-indigo-500 activEtext-indigo-600 dark:text-gray-400 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
                   >
                     Launches
                   </a>
@@ -74,8 +74,8 @@ export default function NavigationBar() {
                     href="/history"
                     className={`${
                       location.pathname === "/history" &&
-                      "border-indigo-500 text-indigo-600"
-                    } "active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
+                      "border-indigo-500 text-indigo-600 dark:text-indigo-400"
+                    } "active:border-indigo-500 active:text-indigo-600 dark:text-gray-400 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
                   >
                     History
                   </a>
@@ -83,8 +83,8 @@ export default function NavigationBar() {
                     href="/about"
                     className={`${
                       location.pathname === "/about" &&
-                      "border-indigo-500 text-indigo-600"
-                    } "active:border-indigo-500 active:text-indigo-600 dark:text-white inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
+                      "border-indigo-500 text-indigo-600 dark:text-indigo-400"
+                    } "active:border-indigo-500 active:text-indigo-600 dark:text-gray-400 inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700`}
                   >
                     About
                   </a>
@@ -107,7 +107,7 @@ export default function NavigationBar() {
                 href="/"
                 className={` block border-l-4 ${
                   location.pathname === "/" &&
-                  "border-indigo-500 bg-indigo-50 text-indigo-700"
+                  "border-indigo-500 bg-indigo-50 text-indigo-700 dark:text-indigo-400"
                 } py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 `}
               >
                 Launches
@@ -117,7 +117,7 @@ export default function NavigationBar() {
                 href="/history"
                 className={` block border-l-4 ${
                   location.pathname === "/history" &&
-                  "border-indigo-500 bg-indigo-50 text-indigo-700"
+                  "border-indigo-500 bg-indigo-50 text-indigo-700 dark:text-indigo-400"
                 } py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 `}
               >
                 History
@@ -127,7 +127,7 @@ export default function NavigationBar() {
                 href="/about"
                 className={` block border-l-4 ${
                   location.pathname === "/about" &&
-                  "border-indigo-500 bg-indigo-50 text-indigo-700"
+                  "border-indigo-500 bg-indigo-50 text-indigo-700 dark:text-indigo-400"
                 } py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 `}
               >
                 About
